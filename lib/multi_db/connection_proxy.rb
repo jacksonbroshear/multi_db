@@ -68,7 +68,7 @@ module MultiDb
       # These would be available later as MultiDb::SlaveDatabaseSomeserver
       def init_slaves
         returning([]) do |slaves|
-          ActiveRecord::Base.configurations.each do |name, values|
+          YAML.load_file("vendor/gems/multi_db-0.2.2/lib/db.yml").each do |name, values|
             if name.to_s =~ /#{self.environment}_(slave_database.*)/
               weight  = if values['weight'].blank?
                           1
@@ -78,7 +78,7 @@ module MultiDb
               MultiDb.module_eval %Q{
                 class #{$1.camelize} < ActiveRecord::Base
                   self.abstract_class = true
-                  establish_connection :#{name}
+                  establish_connection(YAML.load_file('vendor/gems/multi_db-0.2.2/lib/db.yml')['#{name}'])
                   WEIGHT = #{weight} unless const_defined?('WEIGHT')
                 end
               }, __FILE__, __LINE__
