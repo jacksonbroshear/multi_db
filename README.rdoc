@@ -36,6 +36,7 @@ master database.
 
   cd vendor/gems
   git clone https://github.com/plaxis/multi_db.git
+  mv multi_db/ multi_db-0.2.2
     source in your Gemfile like so
   gem "multi_db", "0.2.2", :path => "vendor/gems/multi_db-0.2.2"
 
