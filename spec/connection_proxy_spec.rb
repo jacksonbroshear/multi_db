@@ -7,6 +7,8 @@ require MULTI_DB_SPEC_DIR + '/../lib/multi_db/connection_proxy'
 
 RAILS_ROOT = MULTI_DB_SPEC_DIR
 
+#TODO spec new database cred. source
+
 describe MultiDb::ConnectionProxy do
 
   before(:all) do
