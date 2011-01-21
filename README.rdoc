@@ -34,8 +34,10 @@ master database.
 
 === Install
 
-  gem sources --add http://gems.github.com # only if you haven't already added github
-  gem install schoefmax-multi_db
+  cd vendor/gems
+  git clone https://github.com/plaxis/multi_db.git
+    source in your Gemfile like so
+  gem "multi_db", "0.2.2", :path => "vendor/gems/multi_db-0.2.2"
 
 When using Rails, add this to your environment.rb:
 
