@@ -1,3 +1,8 @@
+This is a forked version of schoefmax's gem multi-db modified for use with Heroku.
+====This Gem Must Be Vendored http://enbake.com/vendor-gems-in-ruby-onrails-ror ====
+There are only two changes in this forked version, first the slave database credentials are kept in
+the gem itself as Heroku will overwrite the database.yml file, the second change is to the 
+method that looks up these credentials.
 = multi_db
 
 =====-- This GEM was inspired by Rick Olson's "masochism"-Plugin
@@ -38,7 +43,7 @@ When using Rails, add this to your environment.rb:
 
 === Setup
 
-In your database.yml, add sections for the slaves, e.g.:
+In vendor/gems/<this gem>/lib/db.yml, add sections for the slaves, e.g.:
 
   production: # that would be the master
     adapter: mysql
