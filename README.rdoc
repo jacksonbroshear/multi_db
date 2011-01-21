@@ -1,5 +1,5 @@
 This is a forked version of schoefmax's gem multi-db modified for use with Heroku.
-====This Gem Must Be Vendored http://enbake.com/vendor-gems-in-ruby-onrails-ror ====
+====This Gem Must Be Vendored 
 There are only two changes in this forked version, first the slave database credentials are kept in
 the gem itself as Heroku will overwrite the database.yml file, the second change is to the 
 method that looks up these credentials.
